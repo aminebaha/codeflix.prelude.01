@@ -18,12 +18,12 @@ function lowerCase(str = '') {
     return sentence
 }
 
-function upperCase(a) {
+function upperCase(str) {
 
     let sentence = ''
 
-    for(let i = 0; i < a.length; i++) {
-        const code = a.charCodeAt(i)
+    for(let i = 0; i < str.length; i++) {
+        const code = str.charCodeAt(i)
 
         if (code >90) {
             sentence += String.fromCharCode(code - 32)
@@ -51,33 +51,33 @@ function upperCase2(a) {
 
 }*/
 
-function length(a) {
-    var compteur=0;
+function length(str) {
+    var count=0;
     
-    console.log(a);
-    console.log(a.charAt(4));
-    while( a.charAt(compteur)!="") {
-        compteur++;
+    console.log(str);
+    console.log(str.charAt(4));
+    while( str.charAt(count)!="") {
+        count++;
         //console.log(compteur);
        
     }
-    return compteur;
+    return count;
 }
 
 
 
-function capitalize(chaine, restToLoweropt) {
+function capitalize(str, restToLoweropt) {
     if(restToLoweropt==false) {
-        return chaine;
+        return str;
     }
     else {
-        var nvchaine =chaine.charAt(0);
+        var newstr =str.charAt(0);
 
-        for(var i=1;i<chaine.length;i++) {
-            nvchaine+= lowerCase(chaine.charAt(i));
+        for(var i=1;i<str.length;i++) {
+            newstr+= lowerCase(str.charAt(i));
         }
     }
-    return nvchaine;
+    return newstr;
 }/*
 function capitalize2(chaine,restToLoweropt) {
     
@@ -105,19 +105,27 @@ function capitalize2(chaine,restToLoweropt) {
 //console.log(capitalize("One CODE", true));
 
 
-function decapitalize(chaine) {
+function decapitalize(str) {
    
-var nvchaine = [] 
-nvchaine = chaine.split(' ');
+var result =""
+var splittedStr= str.split(' ');
 var chainefinale = ""
-for(var i=0;i<nvchaine.length;i++) {
+for(var i=0;i<splittedStr.length;i++) {
  
-    chainefinale +=lowerCase(nvchaine[i]) +" ";
+    result +=lowerCase(splittedStr[i]) +" ";
 
 
 }
 
-return chainefinale
+return result
+
+}
+
+function kebabCase(str) {
+    var result = [] 
+    result = str.split(' ');
+    result = str.split('-');
+
 
 }
 //console.log(capitalize('One CODE',true))
