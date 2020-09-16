@@ -53,8 +53,13 @@ function upperCase2(a) {
 
 function length(a) {
     var compteur=0;
-    for(var i=0;i<a.length;i++) {
+    
+    console.log(a);
+    console.log(a.charAt(4));
+    while( a.charAt(compteur)!="") {
         compteur++;
+        //console.log(compteur);
+       
     }
     return compteur;
 }
@@ -99,4 +104,21 @@ function capitalize2(chaine,restToLoweropt) {
 //console.log(length(a));
 //console.log(capitalize("One CODE", true));
 
-console.log(capitalize('One CODE',true))
+
+function decapitalize(chaine) {
+   
+var nvchaine = [] 
+nvchaine = chaine.split(' ');
+var chainefinale = ""
+for(var i=0;i<nvchaine.length;i++) {
+ 
+    chainefinale +=lowerCase(nvchaine[i]) +" ";
+
+
+}
+
+return chainefinale
+
+}
+//console.log(capitalize('One CODE',true))
+console.log(decapitalize("El Drago aze"));
