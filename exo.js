@@ -104,7 +104,6 @@ function capitalize2(chaine,restToLoweropt) {
 //console.log(length(a));
 //console.log(capitalize("One CODE", true));
 
-
 function decapitalize(str) {
    
 var result =""
@@ -120,13 +119,28 @@ for(var i=0;i<splittedStr.length;i++) {
 return result
 
 }
-
-function kebabCase(str) {
-    var result = [] 
-    result = str.split(' ');
-    result = str.split('-');
-
-
+function deletehyphen(str) {
+    return str.split("-")
 }
+function kebabCase(str) {
+ var result = []
+
+ for(var i=0;i<str.length;i++) {
+      result[i]= lowerCase(str[i]);
+ }
+ 
+    if(result[result.length-1]=='-' )
+     result.pop()
+ 
+    if(result[0]=='-' )
+    result.shift()
+
+return result.join('')
+ 
+}
+
+
 //console.log(capitalize('One CODE',true))
 console.log(decapitalize("El Drago aze"));
+
+console.log(kebabCase("-Love-one-Code-"))
